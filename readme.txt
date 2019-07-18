@@ -11,3 +11,8 @@ Configuration pour la connexion à la base de données :
     - 'DB_USERNAME', 'root' (username phpmyadmin:root)
     - 'DB_PASSWORD', 'root' (password phpmyadmin:root)
     - 'DB_NAME', 'memberarea' (nom de la base de données)
+
+Ouvrir MAMP, start servers
+Les dossiers sont dans Applications/MAMP/htdocs
+Accéder par exemple au fichier index.php du dossier test :
+http://localhost:8888/test/index.php
