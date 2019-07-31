@@ -1,15 +1,15 @@
 <?php
-// Inclurele fichier config
+// Inclure le fichier config
 require_once "config.php";
  
-// Definir les variables and les initialiser avec des valeurs vides
+// Definir les variables et les initialiser avec des valeurs vides
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
  
 // Traitement du formulaire lorsqu'il est soumis
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
-    // Validate username
+    // Valider le nom d'utilisateur
     if(empty(trim($_POST["username"]))){
         $username_err = "Entrez un username.";
     } else{
@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 mysqli_stmt_store_result($stmt);
                 
                 if(mysqli_stmt_num_rows($stmt) == 1){
-                    $username_err = "Cet username est déjà pris.";
+                    $username_err = "Ce username est déjà pris.";
                 } else{
                     $username = trim($_POST["username"]);
                 }
@@ -107,7 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <div class="wrapper">
         <h2>Inscription</h2>
-        <p>Veuillez rmplir ce formulaire afin de créer un compte.</p>
+        <p>Veuillez remplir ce formulaire afin de créer un compte.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Nom d'utilisateur</label>
