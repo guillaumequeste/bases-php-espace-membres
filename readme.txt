@@ -1,10 +1,19 @@
 Création de la table : http://localhost:8888/phpMyAdmin/
     -> New
     -> Create database (entrer le nom)
-    -> Créer la table : - id auto-increment (int(11), primary key)
+
+    CREATE TABLE users (
+        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        username VARCHAR(50) NOT NULL UNIQUE,
+        password VARCHAR(255) NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
+
+
+    (-> Créer la table : - id auto-increment (int(11), primary key)
                         - username varchar 50
                         - password varchar 255
-                        - created_at datetime default:CURRENT_TIMESTAMP
+                        - created_at datetime default:CURRENT_TIMESTAMP)
 
 Configuration pour la connexion à la base de données :
     - 'DB_SERVER', 'localhost:8889' (host local)
